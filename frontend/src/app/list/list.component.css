@@ -1,0 +1,12 @@
+.imgWrapper {
+  /* background: red; */
+  width: 30%;
+  margin: auto auto 10px auto;
+}
+.insidelistimg {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+  text-align: center;
+  align-items: center;
+}

@@ -1,0 +1,56 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+/>
+<mat-card>
+  <!-- <form >
+    <label for="img">Select image:</label>
+    <input  type="file" id="img" name="img" accept="image/*" >
+    <button mat-raised-button color="primary">Primary</button>
+
+  </form> -->
+  <ul>
+    <li>
+      <div>
+        <button mat-raised-button color="primary" (click)="onClick($event)">
+          <!-- <mat-icon>add</mat-icon> -->
+          add
+        </button>
+        <input
+          #fileUpload
+          type="file"
+          class="input_fileupload--hidden"
+          (input)="onInput($event)"
+          (change)="onFileSelected($event)"
+          [accept]="accept"
+        />
+      </div>
+    </li>
+    <div *ngFor="let f of files">
+      <span>{{ f.name }}</span>
+      <button
+        mat-icon-button
+        color="primary"
+        [attr.title]="deleteButtonLabel ? deleteButtonLabel : null"
+        (click)="removeFile(event, f)"
+      >
+        <mat-icon>{{ deleteButtonIcon }}</mat-icon>
+      </button>
+    </div>
+    <li>
+      <div>
+        <button mat-raised-button color="primary" (click)="upload()">
+          upload
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="parent">
+    <img
+      class="child"
+      [src]="ImageData"
+      alt="your image"
+      [hidden]="showReturnImg"
+    />
+  </div>
+</mat-card>

@@ -1,0 +1,6 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+mat-sidenav{
+  background: rgb(0, 217, 255);
+}
